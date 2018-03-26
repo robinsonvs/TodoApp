@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { trigger,animate,style,transition,keyframes } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,13 +21,18 @@ import { trigger,animate,style,transition,keyframes } from '@angular/core';
     ])
   ]
 })      
-     
+
 export class AppComponent {
   todoArray = [];
+  todo;
 
   addTodo(value) {
-    this.todoArray.push(value)
-    //console.log(this)
+    if (value !== ""){
+      this.todoArray.push(value)
+      //console.log(this)
+    } else {
+      alert("Field required **")
+    }
   }
 
   deleteItem(todo) {
